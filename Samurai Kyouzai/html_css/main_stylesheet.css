@@ -78,19 +78,12 @@ body {
 
 /* -------------------- main -------------------- */
 #main {
-    float: left;
-    width: 60%;
+    float: center;
+    margin-left: 20px; 
+    width: 90% center;
     padding: 10px 30px 10px 10px;
 }
 
-#main h2 {
-    margin: 0 0 10px 0;
-    padding: 3px 10px 3px 10px;
-    color: #FFF;
-    font-size: 16px;
-    border-left: solid 10px #C00;
-    background: #F90 url(../images/main_h2.jpg) right top repeat-y;
-}
 #main p {
     margin: 0;
     padding: 0;
@@ -104,8 +97,8 @@ body {
     padding: 3px 10px 3px 10px;
     color: #FFF;
     font-size: 16px;
-    border-left: solid 10px #C00;
-    background: #F90 url(../images/main_h2.jpg) right top repeat-y;
+    border-left: double 10px red;
+    background: orange url(../images/main_h2.jpg) right top repeat-y;
 }
 #main .post img.right {
     margin: 0 0 0 8px;
@@ -137,9 +130,9 @@ body {
 
 #side {
     float: right;
-    width: 30%;
+    width: 90%;
     border: solid 2px #C00;
-    margin: 0px 30px 20px 10px;
+    margin: 0px 45px 50px 10px;
     padding: 35px 25px 10px 25px;
     background-color: #F99;
 }
