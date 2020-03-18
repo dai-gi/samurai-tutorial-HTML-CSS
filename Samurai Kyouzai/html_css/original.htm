@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>プログラミング学習教材集</title>
+        <style>
+            /* ------------------------------ body ------------------------------*/
+            body{
+                height: 1000px;
+            }
+
+
+            /* ------------------------------ linkbar ------------------------------*/
+            #header h3{
+                display: flex;
+                font-family: Helvetica;
+                font-size: 25px;
+                float: top;
+                margin: 0;
+                justify-content: center;
+            }
+            #header:hover{
+                filter: drop-shadow(-3px 7px 2px gray);
+            }
+            /* ↓　機能しない ↓ */
+            a:link{
+                color: blue;
+            }
+            a:visited {
+                color : orange;
+            }
+            /* ↑　機能しない  ↑*/
+            
+
+
+            /* ------------------------------ linkbar ------------------------------*/
+            #linkbar ul{
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+            #linkbar ul li {
+                float: left;
+                width: 20%;
+                text-align: center;
+            }
+            #linkbar li a {
+                display: block;
+                height: 20px;
+                margin: 0;
+                padding: 10px;
+                color: blue;
+                font-size: 20px;
+                text-decoration: none;
+                background-color: ;
+            }
+
+            #linkbar ul li a:hover { 
+                filter: drop-shadow(10px 10px 10px black);
+            }
+
+
+
+        </style>
+    
+    </head>
+    <body>
+        
+        <div id="header">
+            <!-- a要素が機能しない  →　機能しないので現状ブランク-->
+            <h3><a href=""></a>自分専用のプログラミング学習教材集</h3>
+        </div>
+
+        <div id="linkbar">
+            <ul>
+                <li><a href="">トップページ</a></li>
+                <li><a href="https://wa3.i-3-i.info/index.html">IT用語辞典</a></li>
+                <li><a href="">リンク1</a></li>
+                <li><a href="">リンク2</a></li>
+                <li><a href="">リンク3</a></li>
+            </ul>
+
+        </div>
+    </body>
+</html>
