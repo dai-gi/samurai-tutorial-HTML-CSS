@@ -9,7 +9,6 @@
     margin: 0;
     padding: 0;
 }
-
 #corridor {
     width: 100%;
     height: auto;
@@ -42,7 +41,6 @@ body {
     width: 100%;
     
 }
-
 #nav ul {
     margin: 0;
     padding: 0;
@@ -53,7 +51,6 @@ body {
     width: 20%;
     text-align: center;
 }
-
 #nav li a {
     display: block;
     height: 20px;
@@ -75,7 +72,6 @@ body {
     padding: auto;
     padding-top: 20px;
     clear: both;
-
 }
 
 /* -------------------- main -------------------- */
@@ -85,7 +81,6 @@ body {
     width: 90% center;
     padding: 10px 30px 10px 10px;
 }
-
 #main p {
     margin: 0;
     padding: 0;
@@ -128,8 +123,6 @@ body {
 }
 
 /* -------------------- side -------------------- */
-/* ボックスモデル　＝　箱のような構造　「content」「padding」「border」「margin」4つの領域　content(中心)　→　margin(1番外側) */
-
 #side {
     float: right;
     width: 90%;
@@ -166,7 +159,6 @@ body {
     list-style: none;
     
 }
-
 #side .box .boxBody ul li {
     font-size: 15px;
     text-align: center;
@@ -176,7 +168,6 @@ body {
     border-right: solid 2px #C36;
     border-bottom: solid 2px #C36;
 }
-
 #side .box .boxBody ul li:hover {
     font-size: 15px;
     padding: 10px;
@@ -186,7 +177,6 @@ body {
     border-right: solid 2px #C36;
     box-shadow: 9px 9px 9px rgba(0, 0, 0, 0.3);
 }
-
 
 /* -------------------- footer -------------------- */
 #footer {
