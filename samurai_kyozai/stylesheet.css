@@ -182,11 +182,11 @@ body {
 
 /* -------------------- footer -------------------- */
 #footer {
-  clear: both;
+  clear: both; /* <- clear：ボックスの回り込みを解除  both：floatプロパティによる回り込みを全て解除*/
   width: 100%;
   padding: 3px 0 3px 0;
-  background: #39f;
-  color: #fff;
+  background: #39F;
+  color: #FFF;
   font-weight: bold;
-  text-align: center;
+  text-align: center; /* <- 中央寄せ */
 }
