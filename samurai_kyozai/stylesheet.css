@@ -123,7 +123,7 @@ body {
 .clearfix {
   zoom: 1; /* <- zoomプロパティ:;要素の拡大率を制御する */
 }
-.clearfix:after {
+.clearfix:after { /* <- after: (擬似要素)要素の前(=before)後(=after)に任意のテキストを表示できる */
   content: "";
   display: block;
   clear: both;
