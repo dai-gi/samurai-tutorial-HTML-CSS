@@ -19,7 +19,7 @@ body {
   padding: 0px;
   border: 0px;
   background-color: #FFF;
-  top: 10px;
+  top: 0.5px; /* <- 調整 */
   position: relative; /* <- 相対配置: 親ボックスまたはウインドウを基準に配置位置が指定される */
 }
 
@@ -58,8 +58,9 @@ body {
 }
 #nav ul li {
   float: left; /* <- float：要素を横に並べる事ができる */
-  width: 20%;
+  width: 229px; /* <- 調整 */
   text-align: center;
+  margin: 0.5px; /* <- 調整 */
 }
 #nav ul li a {
   display: block;
