@@ -79,24 +79,22 @@ body {
   padding: auto;
   padding-top: 20px;
   clear: both;
-  display: grid;
-  grid-template-columns: 50vw 50vw;
 }
 
 /* -------------------- main -------------------- */
 #main {
   float: left;
-  width: 95%;
+  width: 60%;
   padding: 10px 30px 10px 10px;
 }
 #main h2 {
   margin: 0 0 10px 0;
   padding: 3px 10px 3px 10px;
-  color: #fff;
+  color: #FFF;
   font-size: 16px;
-  border-left: solid 10px #c00;
-  background: #f90 url(../images/main_h2.jpg) right top repeat-y;
-}
+  border-left: solid 10px #C00;            /*  ↓ 右に配置 */
+  background: #F90 url(../images/main_h2.jpg) right top repeat-y; /* <- reepeat-y：横方向（x方向）のみに繰り返される。 */
+}                                                  /*  ↑ 上に配置 */
 #main p {
   margin: 0;
   padding: 0;
