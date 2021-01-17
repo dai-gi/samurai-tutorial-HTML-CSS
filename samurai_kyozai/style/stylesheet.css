@@ -19,6 +19,7 @@
 
 Flexbox
 要素を横に並べたい時に使う
+display: flex;
 
 【親要素に使用するプロパティ】
 flex-directionプロパティ [子要素を配置する時の向きを指定]
@@ -89,6 +90,31 @@ flex-basis [子要素のベース幅を指定] 例) flex-basis: 30%;
 flex [伸び率、縮み率、ベース幅などを一括で指定] 例) flex: 1 0 20%;
 
 align-self [子要素の垂直方向への配置を指定] 例) align-self: flex-start;
+
+
+CSS Grid
+HTML/CSSを使ってレイアウトが調整できるCSSの機能
+display: grid;
+
+grid-template-columnsプロパティ [水平方向にレイアウトを簡単に調整できる]
+例) grid-tem plate-columns: 100px 100px 100px;
+
+【表示画面】
+hoge fuga foo
+
+bar fizz buzz
+
+grid-template-rowsプロパティ [垂直方向にレイアウトを簡単に調整できる]
+例)
+grid-template-columns: 100px 100px;
+grid-template-rows: 100px 100px 100px;
+
+【表示画面】
+hoge fuga
+
+foo bar
+
+fizz buzz
 */
 
 body {
@@ -200,12 +226,14 @@ a:focus { <-- <input>等で入力欄に洗濯している時のスタイルを�
   padding: auto;
   padding-top: 20px;
   clear: both;
+  display: grid;
+  grid-template-columns: 65vw 33vw;
 }
 
 /* -------------------- main -------------------- */
 #main {
-  float: left;
-  width: 55%;
+  /* float: left;
+  width: 55%; */
   padding: 50px 0px 150px;
   margin: 0px 40px;
 }
@@ -217,8 +245,11 @@ a:focus { <-- <input>等で入力欄に洗濯している時のスタイルを�
   border-left: solid 15px #C00;                                    /*  ↓ 右に配置 */
   background: linear-gradient(to right,  #F90,  rgb(255, 227, 70)) right top repeat-y; /* <- reepeat-y：横方向（x方向）のみに繰り返される。 */
 }            /*   ↑↑↑ グラデーションをつける事ができる */              /*  ↑ 上に配置 */
+#main .post h3{
+  margin: 70px 0 0 0;
+}
 #main p {
-  margin: 0px 0px 30px 0px;
+  margin: 0px 0px 50px 0px;
   padding: 0px;
 }
 #main .post {
@@ -257,10 +288,10 @@ a:focus { <-- <input>等で入力欄に洗濯している時のスタイルを�
 
 /* -------------------- side -------------------- */
 #side {
-  float: right;
-  width: 36%;
+  /* float: right;
+  width: 36%; */
   height: 75rem;
-  margin: 0px 40px;
+  margin: 0px;
   background-color: #F99;
 }
 #side .box {
