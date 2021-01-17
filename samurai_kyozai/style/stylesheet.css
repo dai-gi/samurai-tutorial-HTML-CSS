@@ -184,11 +184,10 @@ body {
 #nav ul li a {
   display: block;
   height: 20px;
-  margin: 0px;
-  padding: 20px 10px;
+  padding: 18px 10px;
   /* padding: 上下 右左 */
   color: #FFF;
-  font-size: 25px;
+  font-size: 20px;
   text-decoration: none;
   background-color: green;
 }
@@ -222,38 +221,33 @@ a:focus { <-- <input>等で入力欄に洗濯している時のスタイルを�
 /* -------------------- container -------------------- */
 #container {
   width: 100%;
-  margin: auto;
-  padding: auto;
   padding-top: 20px;
   clear: both;
   display: grid;
-  grid-template-columns: 65vw 33vw;
+  grid-template-columns: 60vw 39.2vw;
 }
 
 /* -------------------- main -------------------- */
 #main {
   /* float: left;
   width: 55%; */
-  padding: 50px 0px 150px;
-  margin: 0px 40px;
+  padding: 50px 0px 50px;
+  margin: 20px;
 }
 #main h2 {
   margin: 0px 0px 10px 0px;
   padding: 15px 0px 15px 20px;
   color: #FFF;
-  font-size: 20px;
+  font-size: 18px;
   border-left: solid 15px #C00;                                    /*  ↓ 右に配置 */
   background: linear-gradient(to right,  #F90,  rgb(255, 227, 70)) right top repeat-y; /* <- reepeat-y：横方向（x方向）のみに繰り返される。 */
 }            /*   ↑↑↑ グラデーションをつける事ができる */              /*  ↑ 上に配置 */
-#main .post h3{
-  margin: 70px 0 0 0;
-}
 #main p {
-  margin: 0px 0px 50px 0px;
+  margin: 0px 0px 10px 0px;
   padding: 0px;
 }
 #main .post {
-  margin: 0px 0px 70px 0px;
+  margin: 0px 0px 50px 0px;
 }
 #main .post img.right {
   margin: 0px 0px 0px 8px;
@@ -290,8 +284,8 @@ a:focus { <-- <input>等で入力欄に洗濯している時のスタイルを�
 #side {
   /* float: right;
   width: 36%; */
-  height: 75rem;
-  margin: 0px;
+  height: 70rem;
+  margin: 20px;
   background-color: #F99;
 }
 #side .box {
@@ -303,7 +297,7 @@ a:focus { <-- <input>等で入力欄に洗濯している時のスタイルを�
 #side .box h2 {
   text-align: center;
   color: #FFF;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 16px;
   font-weight: normal;
   background: url(../img/side_box_h2.png) center no-repeat;
@@ -321,20 +315,107 @@ a:focus { <-- <input>等で入力欄に洗濯している時のスタイルを�
 #side .box .boxBody ul {
   margin: 0px;
   padding: 0px;
-  font-size: 20px;
+  font-size: 18px;
 }
 #side .box .boxBody ul li {
-  margin: 0px 30px 10px 30px;
-  padding: 40px 20px 10px 20px;
+  margin: 0px 10px 10px 10px;
+  padding: 30px 20px 10px 20px;
   list-style: none;
   border-bottom: solid 1px #C36;
 }
 #side .box .boxBody ul li:hover {
-  margin: 0px 30px 10px 30px;
-  padding: 40px 20px 10px 20px;
+  margin: 0px 10px 10px 10px;
+  padding: 30px 20px 10px 20px;
   list-style: none;
   border-bottom: solid 1px #C36;
   box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.5);
   /* box-shadow: 5px 5px 5px 5px rgba() inset; */
   /* box-shadow: 左右の向き 上下の向き ぼかし 広がり 色() 内側指定;  */
 }
+
+
+/* -------------------- media query -------------------- */
+@media screen and (max-width: 1280px) {
+  #nav ul li a {
+    display: block;
+    padding: 15px 10px;
+    color: #FFF;
+    font-size: 20px;
+    background-color: green;
+  }
+  #container {
+    margin: 0 0 0 0;
+    grid-template-columns: 60vw 39vw;
+  }
+  #main {
+    padding: 30px 0px 100px;
+    margin: 20px;
+  }
+  #main h2 {
+    font-size: 17px;
+  }
+  #main p {
+    margin: 0px;
+  }
+  #main .post {
+    margin: 0 0 30px
+  }
+  #side {
+    height: 70rem;
+  }
+  #side .box {
+    margin: 70px 0;
+  }
+  #side .box h2 {
+    font-size: 16px;
+  }
+  #side .box .boxBody ul {
+    font-size: 17px;
+  }
+  #side .box .boxBody ul li {
+    padding: 30px 20px 10px 20px;
+  }
+  #side .box .boxBody ul li:hover {
+    padding: 30px 20px 10px 20px;
+  }
+  .right {
+    width: 40%;
+    height: auto;
+  }
+  .left {
+    float: left;
+    width: 40%;
+    height: auto;
+  }
+}
+
+
+/* 
+ブレイクポイント [CSSなどの設定をスマートフォン・PCで切り分ける際の画面サイズのこと]
+@media screen and (max-width:480px) { 
+}                        ↑↑
+                    ブレイクポイント
+【ブレイクポイント】
+480px 以下 : スマートフォン(縦)
+600px 以下 : スマートフォン(横)
+960px 以下 : タブレット
+1280px 以下 : パソコン(画面小)
+1280pxより大きい : パソコン(画面大)
+
+
+メディアクエリ [画面サイズによって有効になるCSSを分岐する]
+
+max-width:480px <-- 最大画面幅
+min-width:480px <-- 最小画面幅
+
+@media screen and (max-width:480px) { 
+  .media {
+    background-color: red; <- メディアクエリ
+  }
+}
+@media screen and (max-width:640px) { 
+  .media {
+    background-color: green; <- メディアクエリ
+  }
+}
+*/
