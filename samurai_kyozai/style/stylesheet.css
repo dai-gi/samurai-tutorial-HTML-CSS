@@ -2,9 +2,94 @@
 /* 
 「vh・vw」について...
 画像サイズを変更する時に使用
+
+構造擬似クラス
+:root [ルート要素(HTMLではhtmlがルート要素になる)に対してスタイルを適用することができる(=全体にスタイルが適用される)]
+
+:first-child [一番最初に表示される要素に対してスタイルを適用することができる]
+
+:last-child [一番最後に表示される要素に対してスタイルを適用することができる]
+
+:first-of-type [一番最初に表示される要素に対してスタイルを適用することができる(間に他のHTML要素があってもOK)]
+
+:last-of-type [一番最後に表示される要素に対してスタイルを適用することができる(間に他のHTML要素があってもOK)]
+
+:empty [空白のHTML要素に対してスタイルを設定できる(<div></div> など)]
+
+
+Flexbox
+要素を横に並べたい時に使う
+
+【親要素に使用するプロパティ】
+flex-directionプロパティ [子要素を配置する時の向きを指定]
+:row [左から右へと配置]
+
+:row-reverse [右から左へと配置]
+
+:column [上から下へと配置]
+
+:column-reverse [下から上へと配置]
+
+
+flex-wrapプロパティ [子要素の折り返しを行うかどうかを指定]
+:nowrap [折り返さない]
+
+:wrap [上から下へと折り返す]
+
+:wrap-reverse [下から上へと折り返す]
+
+
+justify-contentプロパティ [水平方向の配置を指定]
+:flex-start [左揃えで配置]
+
+:flex-end [右揃えで配置]
+
+:center [中央揃えで配置]
+
+:space-between [両端の要素をスペースを空けずに配置、残りは均等に配置]
+
+:space-around [全て均等な配置にする]
+
+
+align-itemsプロパティ [垂直方向の配置を指定]
+:stretch [上下の余白を埋めるように配置]
+
+:flex-start [上揃えで配置]
+
+:flex-end [下揃えで配置]
+
+:center [上下中央揃えで配置]
+
+:baseline [ベースラインに合わせて配置]
+
+
+align-contentプロパティ [複数行の垂直方向への配置を指定]
+:stretch [行の余白を埋めるように配置]
+
+:flex-start [行を上揃えで配置]
+
+:flex-end [行を下揃えで配置]
+
+:center [行を上下中央揃えで配置]
+
+:space-between [一番上と一番下の行の余白を空けずに配置し、他は均等に間隔をあける]
+
+:space-around [全て均等な間隔で余白を空ける]
+
+
+【子要素に使用するプロパティ】
+order [子要素の並び順を指定] 例) order: 3;
+
+flex-grow [子要素の伸び率を指定] 例) flex-grow: 4;
+
+flex-shrink [子要素の縮み率を指定] 例) flex-shrink: 1.5;
+
+flex-basis [子要素のベース幅を指定] 例) flex-basis: 30%;
+
+flex [伸び率、縮み率、ベース幅などを一括で指定] 例) flex: 1 0 20%;
+
+align-self [子要素の垂直方向への配置を指定] 例) align-self: flex-start;
 */
-
-
 
 body {
   margin: 0;
@@ -25,7 +110,7 @@ body {
   padding: 0px;
   border: 0px;
   background-color: #FFF;
-  top: 1px; /* <- 調整 */
+  top: 1px;
   position: relative; /* <- 相対配置: 親ボックスまたはウインドウを基準に配置位置が指定される */
 }
 
@@ -62,12 +147,13 @@ body {
   margin: 0px;
   padding: 0px;
   list-style-type: none;
+  display: flex; /* <- レイアウトの調整を容易にできる */
 }
 #nav ul li {
-  float: left; /* <- float：要素を横に並べる事ができる */
-  width: 379px; /* <- 調整 */
+  /* float: left; <- float：要素を横に並べる事ができる */
+  width: 379px;
   text-align: center;
-  margin: 1px; /* <- 調整 */
+  margin: 1px;
 }
 #nav ul li a {
   display: block;
