@@ -1,8 +1,5 @@
 @charset "utf-8";
 /* 
-「vh・vw」について...
-画像サイズを変更する時に使用
-
 構造擬似クラス
 :root [ルート要素(HTMLではhtmlがルート要素になる)に対してスタイルを適用することができる(=全体にスタイルが適用される)]
 
@@ -128,7 +125,7 @@ body {
 
 /* -------------------- wrapper -------------------- */
 /* ラッパーの主な役割：
-「aside」や「main」要素などを一括りにして、スクリーンの両端などに余白を持たせる */
+「side」や「main」要素などを一括りにして、スクリーンの両端などに余白を持たせる */
 
 #wrapper {
   width: 100%;
@@ -136,8 +133,7 @@ body {
   padding: 0px;
   border: 0px;
   background-color: #FFF;
-  top: 1px;
-  position: relative; /* <- 相対配置: 親ボックスまたはウインドウを基準に配置位置が指定される */
+  position: relative; /* <- 相対配置 [親ボックスまたはウインドウを基準に配置位置が指定される] */
 }
 
 /* -------------------- header -------------------- */
@@ -155,7 +151,7 @@ body {
 
 /* -------------------- footer -------------------- */
 #footer {
-  clear: both; /* <- clear：ボックスの回り込みを解除  both：floatプロパティによる回り込みを全て解除*/
+  clear: both; /* <- clear：ボックスの回り込みを解除  both：floatプロパティによる回り込みを全て解除 */
   width: 100%;
   padding: 3px 0px 3px 0px;
   /* padding: 上 右 下 左 */
@@ -177,17 +173,17 @@ body {
 }
 #nav ul li {
   /* float: left; <- float：要素を横に並べる事ができる */
-  width: 379px;
+  width: 379.9px;
   text-align: center;
-  margin: 1px;
+  margin: 0.5px;
 }
 #nav ul li a {
   display: block;
   height: 20px;
-  padding: 18px 10px;
+  padding: 13px 15px;
   /* padding: 上下 右左 */
   color: #FFF;
-  font-size: 20px;
+  font-size: 16px;
   text-decoration: none;
   background-color: green;
 }
@@ -221,33 +217,33 @@ a:focus { <-- <input>等で入力欄に洗濯している時のスタイルを�
 /* -------------------- container -------------------- */
 #container {
   width: 100%;
-  /* padding-top: 20px; */
+  margin: 0 10.49869vw;
   clear: both;
   display: grid;
-  grid-template-columns: 60vw 39.2vw;
+  grid-template-columns: 55.11811vw 23.88451vw;
+  /* 
+    vw(viewport width) [ビューポートの幅に対する割合]
+    vh(viewport height) [ビューポートの高さに対する割合]
+    vmin(viewport minimum) [ビューポートの幅と高さのうち、値が小さい方に対する割合]
+    vh(viewport max) [ビューポートの幅と高さのうち、値が大きい方に対する割合]
+  */
 }
 
 /* -------------------- main -------------------- */
 #main {
-  /* float: left;
-  width: 55%; */
-  padding: 50px 0px 0px;
-  margin: 20px;
+  margin: 2.62467vw 3.14961vw; /* = margin: 50px 60px; */
+}
+#main .post {
+  margin: 0 0 50px;
 }
 #main h2 {
-  margin: 0px 0px 10px 0px;
   padding: 15px 0px 15px 20px;
   color: #FFF;
-  font-size: 18px;
   border-left: solid 15px #C00;                                    /*  ↓ 右に配置 */
   background: linear-gradient(to right,  #F90,  rgb(255, 227, 70)) right top repeat-y; /* <- reepeat-y：横方向（x方向）のみに繰り返される。 */
 }            /*   ↑↑↑ グラデーションをつける事ができる */              /*  ↑ 上に配置 */
 #main p {
-  margin: 0px 0px 10px 0px;
-  padding: 0px;
-}
-#main .post {
-  margin: 0px 0px 50px 0px;
+  margin: 0;
 }
 #main .post img.right {
   margin: 0px 0px 0px 8px;
@@ -257,12 +253,12 @@ a:focus { <-- <input>等で入力欄に洗濯している時のスタイルを�
 }
 .right {
   float: right;
-  width: 40%;
+  width: 50%;
   height: auto;
 }
 .left {
   float: left;
-  width: 40%;
+  width: 50%;
   height: auto;
 }
 
@@ -282,22 +278,19 @@ a:focus { <-- <input>等で入力欄に洗濯している時のスタイルを�
 
 /* -------------------- side -------------------- */
 #side {
-  /* float: right;
-  width: 36%; */
-  height: 70rem;
-  margin: 20px;
+  height: 700px;
+  margin: 2.62467vw 1.04987vw 0;
   background-color: #F99;
 }
 #side .box {
-  margin: 70px 0px;
   /* margin: 上下 右左; */
-  padding: 20px 50px;
+  /* margin: 70px 0px; */
+  padding: 30px 30px 20px;
   background: url(../img/side_box.png) bottom no-repeat;
 }
 #side .box h2 {
   text-align: center;
   color: #FFF;
-  font-size: 18px;
   line-height: 16px;
   font-weight: normal;
   background: url(../img/side_box_h2.png) center no-repeat;
@@ -309,23 +302,20 @@ a:focus { <-- <input>等で入力欄に洗濯している時のスタイルを�
   border-bottom: solid 1px #C36;
   border-left: solid 1px #C36;
   background-color: #FFF;
-  margin: 0px;
-  padding: 30px 20px 50px 20px;
+  padding: 10px 30px 30px;
 }
 #side .box .boxBody ul {
   margin: 0px;
   padding: 0px;
-  font-size: 18px;
+  font-size: 17px;
 }
 #side .box .boxBody ul li {
-  margin: 0px 10px 10px 10px;
-  padding: 30px 20px 10px 20px;
+  padding: 20px 10px 10px;
   list-style: none;
   border-bottom: solid 1px #C36;
 }
 #side .box .boxBody ul li:hover {
-  margin: 0px 10px 10px 10px;
-  padding: 30px 20px 10px 20px;
+  padding: 20px 10px 10px;
   list-style: none;
   border-bottom: solid 1px #C36;
   box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.5);
@@ -335,54 +325,8 @@ a:focus { <-- <input>等で入力欄に洗濯している時のスタイルを�
 
 
 /* -------------------- media query -------------------- */
-@media screen and (max-width: 1280px) {
-  #nav ul li a {
-    padding: 15px 10px;
-    font-size: 20px;
-  }
-  #container {
-    grid-template-columns: 60vw 39vw;
-  }
-  #main {
-    padding: 30px 0px 50px;
-    margin: 20px;
-  }
-  #main h2 {
-    font-size: 17px;
-  }
-  #main p {
-    margin: 0px;
-  }
-  #main .post {
-    margin: 0 0 30px
-  }
-  #side {
-    height: 70rem;
-  }
-  #side .box {
-    margin: 70px 0;
-  }
-  #side .box h2 {
-    font-size: 16px;
-  }
-  #side .box .boxBody ul {
-    font-size: 17px;
-  }
-  #side .box .boxBody ul li {
-    padding: 30px 20px 10px 20px;
-  }
-  #side .box .boxBody ul li:hover {
-    padding: 30px 20px 10px 20px;
-  }
-  .right {
-    width: 40%;
-    height: auto;
-  }
-  .left {
-    float: left;
-    width: 40%;
-    height: auto;
-  }
+@media screen and (min-width: 1280px) {
+  
 }
 @media screen and (max-width: 960px) {
   #nav ul li a {
