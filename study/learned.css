@@ -66,6 +66,17 @@
         - align-self [子要素の垂直方向への配置を指定] 例) align-self: flex-start;
 
 【CSS Grid】
+
+    <div> <- コンテナ
+        <div></div> <- アイテム
+        
+        <p></p> <- アイテム
+        
+        <section> <- アイテム
+            <div></div>
+        </section>
+    </div>
+
     -> HTML/CSSを使ってレイアウトが調整できるCSSの機能
         display: grid;
 
