@@ -1,0 +1,205 @@
+/* 
+
+【viewport】
+    - vw(viewport width) [ビューポートの幅に対する割合]
+    - vh(viewport height) [ビューポートの高さに対する割合]
+    - vmin(viewport minimum) [ビューポートの幅と高さのうち、値が小さい方に対する割合]
+    - vmax(viewport max) [ビューポートの幅と高さのうち、値が大きい方に対する割合]
+
+【BOXの概念】
+    -> paddingプロパティ
+        - 値を適用させる方向
+        例)
+            padding: 上 右 下 左;
+            padding: 上 左右 下;
+            padding: 上下 左右;
+
+【wrapper】
+    ラッパーの主な役割 [「side」や「main」要素などを一括りにして、スクリーンの両端などに余白を持たせる]
+
+* -------------------- レイアウト -------------------- *
+
+【Flexbox】
+    -> 要素を横に並べたい時に使う
+        display: flex;
+
+    -> 親要素に使用するプロパティ
+        flex-directionプロパティ [子要素を配置する時の向きを指定]
+            - row [左から右へと配置]
+            - row-reverse [右から左へと配置]
+            - column [上から下へと配置]
+            - column-reverse [下から上へと配置]
+        
+        flex-wrapプロパティ [子要素の折り返しを行うかどうかを指定]
+            - nowrap [折り返さない]
+            - 下へと折り返す]
+            - wrap-reverse [下から上へと折り返す]
+
+        justify-contentプロパティ [水平方向の配置を指定]
+            - flex-start [左揃えで配置]
+            - flex-end [右揃えで配置]
+            - center [中央揃えで配置]
+            - space-between [両端の要素をスペースを空けずに配置、残りは均等に配置]
+            - space-around [全て均等な配置にする]
+
+        align-itemsプロパティ [垂直方向の配置を指定]
+            - stretch [上下の余白を埋めるように配置]
+            - flex-start [上揃えで配置]
+            - flex-end [下揃えで配置]
+            - center [上下中央揃えで配置]
+            - baseline [ベースラインに合わせて配置]
+
+        align-contentプロパティ [複数行の垂直方向への配置を指定]
+            - stretch [行の余白を埋めるように配置]
+            - flex-start [行を上揃えで配置]
+            - flex-end [行を下揃えで配置]
+            - center [行を上下中央揃えで配置]
+            - space-between [一番上と一番下の行の余白を空けずに配置し、他は均等に間隔をあける]
+            - space-around [全て均等な間隔で余白を空ける]
+
+    -> 子要素に使用するプロパティ
+        - order [子要素の並び順を指定] 例) order: 3;
+        - flex-grow [子要素の伸び率を指定] 例) flex-grow: 4;
+        - flex-shrink [子要素の縮み率を指定] 例) flex-shrink: 1.5;
+        - flex-basis [子要素のベース幅を指定] 例) flex-basis: 30%;
+        - flex [伸び率、縮み率、ベース幅などを一括で指定] 例) flex: 1 0 20%;
+        - align-self [子要素の垂直方向への配置を指定] 例) align-self: flex-start;
+
+【CSS Grid】
+    -> HTML/CSSを使ってレイアウトが調整できるCSSの機能
+        display: grid;
+
+    -> grid-template-columnsプロパティ [水平方向にレイアウトを簡単に調整できる]
+        例) grid-template-columns: 100px 100px 100px;
+
+========== 表示画面 ==========
+hoge fuga foo
+
+bar fizz buzz
+
+    -> grid-template-rowsプロパティ [垂直方向にレイアウトを簡単に調整できる]
+        例)
+        grid-template-columns: 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+
+========== 表示画面 ==========
+hoge fuga
+
+foo bar
+
+fizz buzz
+
+* -------------------- 擬似クラス -------------------- *
+
+【構造擬似クラス】
+    - :root [ルート要素(HTMLではhtmlがルート要素になる)に対してスタイルを適用することができる(=全体にスタイルが適用される)]
+    - :first-child [一番最初に表示される要素に対してスタイルを適用することができる]
+    - :last-child [一番最後に表示される要素に対してスタイルを適用することができる]
+    - :first-of-type [一番最初に表示される要素に対してスタイルを適用することができる(間に他のHTML要素があってもOK)]
+    - :last-of-type [一番最後に表示される要素に対してスタイルを適用することができる(間に他のHTML要素があってもOK)]
+    - :empty [空白のHTML要素に対してスタイルを設定できる(<div></div> など)]
+
+【擬似要素】
+    - after [要素の後に任意のテキストを表示できる]
+    - before [要素の前に任意のテキストを表示できる]
+
+【リンク擬似クラス】
+    - まだアクセスしたことがないリンク先のスタイルを設定
+        a:link {
+            color: black;
+        }
+    - 既にアクセスした事があるリンク先のスタイルを設定
+        a:visited { 
+            color: red;
+        }
+
+【ユーザー擬似クラス】
+    - マウスカーソルを合わせた時のスタイルを設定
+        a:hover { 
+            background-color: red;
+        }
+    - クリックしている時のスタイルを設定
+        a:acrive {
+            background-color: yellow;
+        }
+    - <input> 等で入力欄に洗濯している時のスタイルを設定
+        a:focus { <-- 
+            background-color: green;
+        }
+
+* -------------------- プロパティ -------------------- *
+
+【positionプロパティ】
+    - relative
+        相対配置 [親ボックスまたはウインドウを基準に配置位置が指定される]
+
+
+【clearプロパティ】
+    - both [floatプロパティによる回り込みを全て解除]
+
+【text-alignプロパティ】
+    - center [中央寄せ]
+
+
+【displayプロパティ】
+    ブロック要素やインライン要素を調整できる。
+        - ブロック要素：WEBサイトのレイアウトのまとまりとして使われる要素
+        - インライン要素：文の行に含まれることを想定している要素(ブロック要素の中身にインライン要素があるイメージ)
+        - インラインブロック要素：インライン要素のように横並びにできたり、ブロック要素のように高さが指定できる
+
+
+【floatプロパティ】
+    要素を横に並べることができる
+    例)
+        float: left;
+
+【backgroundプロパティ】
+    -> グラデーション
+        linear-gradient(方向, ベース色, グラデーション色) 方向 繰り返す方向(y = 縦, x = 横);
+        例)
+            background: linear-gradient(to right,  #F90,  rgb(255, 227, 70)) right top repeat-y;
+
+【zoomプロパティ】
+    要素の拡大率を制御する
+
+【contentプロパティ】
+    要素の前後に擬似要素を使って、テキストや画像などのコンテンツを挿入する際に使用 《注意点:contentで表示したテキストは選択したりコピペができない》]
+
+【boxshadowプロパティ】
+    box-shadow: 左右の向き 上下の向き ぼかし 広がり 色() 内側指定;
+    例)
+        box-shadow: 5px 5px 5px 5px rgba() inset;
+
+* -------------------- メディアクエリ -------------------- *
+
+ブレイクポイント [CSSなどの設定をスマートフォン・PCで切り分ける際の画面サイズのこと]
+
+【ブレイクポイント】
+    - 480px 以下 : スマートフォン(縦)
+    - 600px 以下 : スマートフォン(横)
+    - 960px 以下 : タブレット
+    - 1280px 以下 : パソコン(画面小)
+    - 1280pxより大きい : パソコン(画面大)
+    
+    例)
+        @media screen and (max-width:480px) { 
+        }                        ↑↑
+                    ブレイクポイント
+
+【メディアクエリ】
+    画面サイズによって有効になるCSSを分岐する
+        max-width:480px <-- 最大画面幅
+        min-width:480px <-- 最小画面幅
+
+        例)
+            @media screen and (max-width:480px) { 
+                .media {
+                    background-color: red; <- メディアクエリ
+                }
+            }
+            @media screen and (max-width:640px) { 
+                .media {
+                    background-color: green; <- メディアクエリ
+                }
+            }
+*/
