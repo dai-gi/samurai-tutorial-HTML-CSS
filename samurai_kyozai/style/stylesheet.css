@@ -1,118 +1,4 @@
 @charset "utf-8";
-/* 
-構造擬似クラス
-:root [ルート要素(HTMLではhtmlがルート要素になる)に対してスタイルを適用することができる(=全体にスタイルが適用される)]
-
-:first-child [一番最初に表示される要素に対してスタイルを適用することができる]
-
-:last-child [一番最後に表示される要素に対してスタイルを適用することができる]
-
-:first-of-type [一番最初に表示される要素に対してスタイルを適用することができる(間に他のHTML要素があってもOK)]
-
-:last-of-type [一番最後に表示される要素に対してスタイルを適用することができる(間に他のHTML要素があってもOK)]
-
-:empty [空白のHTML要素に対してスタイルを設定できる(<div></div> など)]
-
-
-Flexbox
-要素を横に並べたい時に使う
-display: flex;
-
-【親要素に使用するプロパティ】
-flex-directionプロパティ [子要素を配置する時の向きを指定]
-:row [左から右へと配置]
-
-:row-reverse [右から左へと配置]
-
-:column [上から下へと配置]
-
-:column-reverse [下から上へと配置]
-
-
-flex-wrapプロパティ [子要素の折り返しを行うかどうかを指定]
-:nowrap [折り返さない]
-
-:wrap [上から下へと折り返す]
-
-:wrap-reverse [下から上へと折り返す]
-
-
-justify-contentプロパティ [水平方向の配置を指定]
-:flex-start [左揃えで配置]
-
-:flex-end [右揃えで配置]
-
-:center [中央揃えで配置]
-
-:space-between [両端の要素をスペースを空けずに配置、残りは均等に配置]
-
-:space-around [全て均等な配置にする]
-
-
-align-itemsプロパティ [垂直方向の配置を指定]
-:stretch [上下の余白を埋めるように配置]
-
-:flex-start [上揃えで配置]
-
-:flex-end [下揃えで配置]
-
-:center [上下中央揃えで配置]
-
-:baseline [ベースラインに合わせて配置]
-
-
-align-contentプロパティ [複数行の垂直方向への配置を指定]
-:stretch [行の余白を埋めるように配置]
-
-:flex-start [行を上揃えで配置]
-
-:flex-end [行を下揃えで配置]
-
-:center [行を上下中央揃えで配置]
-
-:space-between [一番上と一番下の行の余白を空けずに配置し、他は均等に間隔をあける]
-
-:space-around [全て均等な間隔で余白を空ける]
-
-
-【子要素に使用するプロパティ】
-order [子要素の並び順を指定] 例) order: 3;
-
-flex-grow [子要素の伸び率を指定] 例) flex-grow: 4;
-
-flex-shrink [子要素の縮み率を指定] 例) flex-shrink: 1.5;
-
-flex-basis [子要素のベース幅を指定] 例) flex-basis: 30%;
-
-flex [伸び率、縮み率、ベース幅などを一括で指定] 例) flex: 1 0 20%;
-
-align-self [子要素の垂直方向への配置を指定] 例) align-self: flex-start;
-
-
-CSS Grid
-HTML/CSSを使ってレイアウトが調整できるCSSの機能
-display: grid;
-
-grid-template-columnsプロパティ [水平方向にレイアウトを簡単に調整できる]
-例) grid-template-columns: 100px 100px 100px;
-
-【表示画面】
-hoge fuga foo
-
-bar fizz buzz
-
-grid-template-rowsプロパティ [垂直方向にレイアウトを簡単に調整できる]
-例)
-grid-template-columns: 100px 100px;
-grid-template-rows: 100px 100px 100px;
-
-【表示画面】
-hoge fuga
-
-foo bar
-
-fizz buzz
-*/
 
 body {
   margin: 0;
@@ -124,16 +10,13 @@ body {
 }
 
 /* -------------------- wrapper -------------------- */
-/* ラッパーの主な役割：
-「side」や「main」要素などを一括りにして、スクリーンの両端などに余白を持たせる */
-
 #wrapper {
   width: 100%;
   margin: auto;
   padding: 0px;
   border: 0px;
   background-color: #FFF;
-  position: relative; /* <- 相対配置 [親ボックスまたはウインドウを基準に配置位置が指定される] */
+  position: relative;
 }
 
 /* -------------------- header -------------------- */
@@ -151,14 +34,13 @@ body {
 
 /* -------------------- footer -------------------- */
 #footer {
-  clear: both; /* <- clear：ボックスの回り込みを解除  both：floatプロパティによる回り込みを全て解除 */
+  clear: both;
   width: 100%;
   padding: 0.1vw 0;
-  /* padding: 上 右 下 左 */
   background: #39F;
   color: #FFF;
   font-weight: bold;
-  text-align: center; /* <- 中央寄せ */
+  text-align: center;
 }
 
 /* -------------------- nav -------------------- */
@@ -169,10 +51,9 @@ body {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  display: flex; /* <- レイアウトの調整を容易にできる */
+  display: flex;
 }
 #nav ul li {
-  /* float: left; <- float：要素を横に並べる事ができる */
   width: 20vw;
   text-align: center;
   margin: 1px;
@@ -180,7 +61,6 @@ body {
 #nav ul li a {
   display: block;
   padding: 1vmax 1vw;
-  /* padding: 上下 右左 */
   color: #FFF;
   font-size: 13px;
   text-decoration: none;
@@ -189,66 +69,36 @@ body {
 #nav ul li a:hover {
   filter: drop-shadow(5px 5px 5px black)
 }
-/*
-リンク擬似クラス
-a:link { <-- まだアクセスしたことがないリンク先のスタイルを設定
-  color: black;
-}
-a:visited { <-- 既にアクセスした事があるリンク先のスタイルを設定
-  color: red;
-}
- */
-
-
-/* 
-ユーザー擬似クラス
-a:hover { <-- マウスカーソルを合わせた時のスタイルを設定
-  background-color: red;
-}
-a:acrive { <-- クリックしている時のスタイルを設定
-  background-color: yellow;
-}
-a:focus { <-- <input>等で入力欄に洗濯している時のスタイルを設定
-  background-color: green;
-}
-*/
 
 /* -------------------- container -------------------- */
 #container {
-  width: 100%;
-  margin: 0 10.49869vw;
+  margin: 0 10vw;
   clear: both;
   display: grid;
-  grid-template-columns: 55.11811vw 23.88451vw;
-  /* 
-    vw(viewport width) [ビューポートの幅に対する割合]
-    vh(viewport height) [ビューポートの高さに対する割合]
-    vmin(viewport minimum) [ビューポートの幅と高さのうち、値が小さい方に対する割合]
-    vmax(viewport max) [ビューポートの幅と高さのうち、値が大きい方に対する割合]
-  */
+  grid-template-columns: 55vw 23vw;
 }
 
 /* -------------------- main -------------------- */
 #main {
-  margin: 2.62467vw 3.14961vw; /* = margin: 50px 60px; */
+  margin: 2.62467vw 3.14961vw;
 }
 #main .post {
-  margin: 0 0 50px;
+  margin: 0 0 2vw;
 }
 #main h2 {
-  padding: 15px 0px 15px 20px;
+  padding: 0.7vw 0 0.1vw ;
   color: #FFF;
-  border-left: solid 15px #C00;                                    /*  ↓ 右に配置 */
-  background: linear-gradient(to right,  #F90,  rgb(255, 227, 70)) right top repeat-y; /* <- reepeat-y：横方向（x方向）のみに繰り返される。 */
-}            /*   ↑↑↑ グラデーションをつける事ができる */              /*  ↑ 上に配置 */
+  border-left: solid 15px #C00; 
+  background: linear-gradient(to right,  #F90,  rgb(255, 227, 70)) right top repeat-y;
+}
 #main p {
   margin: 0;
 }
 #main .post img.right {
-  margin: 0px 0px 0px 8px;
+  margin: 0 0 0 8px;
 }
 #main .post img.left {
-  margin: 0px 8px 0px 0px;
+  margin: 0 8px 0 0;
 }
 .right {
   float: right;
@@ -263,100 +113,62 @@ a:focus { <-- <input>等で入力欄に洗濯している時のスタイルを�
 
 /* -------------------- clearfix -------------------- */
 .clearfix {
-  zoom: 1; /* <- zoomプロパティ：要素の拡大率を制御する */
+  zoom: 1;
 }
-.clearfix:after { /* <- after： (擬似要素)要素の前(=before)後(=after)に任意のテキストを表示できる */
-  content: ""; /* <- contentプロパティ: 要素の前後に、擬似要素を使ってテキストや画像などのコンテンツを挿入する際に使用【注意点:contentで表示したテキストは選択したりコピペができない】*/
+.clearfix:after {
+  content: "";
   display: block;
-  /* displayプロパティ：ブロック要素やインライン要素を調整できる。 */
-  /* ブロック要素：WEBサイトのレイアウトのまとまりとして使われる要素 */
-  /* インライン要素：文の行に含まれることを想定している要素(ブロック要素の中身にインライン要素があるイメージ) */
-  /* インラインブロック要素：インライン要素のように横並びにできたり、ブロック要素のように高さが指定できる */
   clear: both;
 }
 
 /* -------------------- side -------------------- */
 #side {
-  height: 700px;
-  margin: 2.62467vw 1.04987vw 0;
+  height: 57%;
+  margin: 2.6vw 1vw 0;
   background-color: #F99;
 }
 #side .box {
-  /* margin: 上下 右左; */
-  /* margin: 70px 0px; */
-  padding: 30px 30px 20px;
+  padding: 1.5vw 1.5vw 1vw;
   background: url(../img/side_box.png) bottom no-repeat;
 }
 #side .box h2 {
   text-align: center;
   color: #FFF;
-  line-height: 16px;
   font-weight: normal;
   background: url(../img/side_box_h2.png) center no-repeat;
-  margin: 0px;
-  padding: 10px;
+  margin: 0;
+  padding: 0.5vw;
 }
 #side .box .boxBody {
   border-right: solid 1px #C36;
   border-bottom: solid 1px #C36;
   border-left: solid 1px #C36;
   background-color: #FFF;
-  padding: 10px 30px 30px;
+  padding: 0.5vw 1.5vw 1.5vw;
 }
 #side .box .boxBody ul {
-  margin: 0px;
-  padding: 0px;
-  font-size: 17px;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
 }
 #side .box .boxBody ul li {
-  padding: 20px 10px 10px;
+  padding: 1vw 0.5vw 0.5vw;
   list-style: none;
   border-bottom: solid 1px #C36;
 }
 #side .box .boxBody ul li:hover {
-  padding: 20px 10px 10px;
+  padding: 1vw 0.5vw 0.5vw;
   list-style: none;
   border-bottom: solid 1px #C36;
   box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.5);
-  /* box-shadow: 5px 5px 5px 5px rgba() inset; */
-  /* box-shadow: 左右の向き 上下の向き ぼかし 広がり 色() 内側指定;  */
 }
 
 
 /* -------------------- media query -------------------- */
-@media screen and (min-width: 1280px) {
+@media screen and (max-width: 1520px)  and (min-width: 1920px) {
   
 }
 @media screen and (max-width: 960px) {
 
 }
 
-/* 
-ブレイクポイント [CSSなどの設定をスマートフォン・PCで切り分ける際の画面サイズのこと]
-@media screen and (max-width:480px) { 
-}                        ↑↑
-                    ブレイクポイント
-【ブレイクポイント】
-480px 以下 : スマートフォン(縦)
-600px 以下 : スマートフォン(横)
-960px 以下 : タブレット
-1280px 以下 : パソコン(画面小)
-1280pxより大きい : パソコン(画面大)
-
-
-メディアクエリ [画面サイズによって有効になるCSSを分岐する]
-
-max-width:480px <-- 最大画面幅
-min-width:480px <-- 最小画面幅
-
-@media screen and (max-width:480px) { 
-  .media {
-    background-color: red; <- メディアクエリ
-  }
-}
-@media screen and (max-width:640px) { 
-  .media {
-    background-color: green; <- メディアクエリ
-  }
-}
-*/
