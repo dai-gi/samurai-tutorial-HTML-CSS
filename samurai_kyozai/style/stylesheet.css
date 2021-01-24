@@ -75,6 +75,7 @@ body {
   margin: 0 10vw;
   clear: both;
   display: grid;
+  grid-template-rows: 40vw 25vw;
   grid-template-columns: 55vw 23vw;
 }
 
@@ -123,28 +124,32 @@ body {
 
 /* -------------------- side -------------------- */
 #side {
-  height: 57%;
-  margin: 2.6vw 1vw 0;
+  height: 37vw;
+  margin: 1vw;
   background-color: #F99;
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-rows: 19vw 20vw;
 }
 #side .box {
-  padding: 1.5vw 1.5vw 1vw;
-  background: url(../img/side_box.png) bottom no-repeat;
+  margin: 1vw;
+  text-align: center;
 }
 #side .box h2 {
-  text-align: center;
   color: #FFF;
   font-weight: normal;
   background: url(../img/side_box_h2.png) center no-repeat;
-  margin: 0;
-  padding: 0.5vw;
+  margin: 0 0.5vw;
+  padding: 0.5vw 0.5vw 0.3vw 0.5vw;
 }
 #side .box .boxBody {
+  height: 30vh;
+  width: 17vw;
   border-right: solid 1px #C36;
   border-bottom: solid 1px #C36;
   border-left: solid 1px #C36;
   background-color: #FFF;
-  padding: 0.5vw 1.5vw 1.5vw;
+  padding: 1vw 1vw 2vw;
 }
 #side .box .boxBody ul {
   margin: 0;
@@ -152,17 +157,20 @@ body {
   font-size: 14px;
 }
 #side .box .boxBody ul li {
-  padding: 1vw 0.5vw 0.5vw;
+  padding: 1vw 1vw 0.5vw; 
+  text-align: justify;
   list-style: none;
   border-bottom: solid 1px #C36;
 }
-#side .box .boxBody ul li:hover {
+/* #side .box .boxBody ul li:hover {
   padding: 1vw 0.5vw 0.5vw;
   list-style: none;
   border-bottom: solid 1px #C36;
   box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.5);
+} */
+#side .box img {
+  text-align: center;
 }
-
 
 /* -------------------- media query -------------------- */
 @media screen and (max-width: 1520px)  and (min-width: 1920px) {
