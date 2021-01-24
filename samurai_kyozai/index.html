@@ -1,38 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<!-- 
-viewport [
-    Webページを表示するデバイス(PCやスマートフォンなど)を検知し、そのデバイスの画面サイズなどを取得できるもの。
-    アクセスしたデバイスのサイズに合わせてWebページを表示するという機能もある。
-
-    例) PC向けに作成されたWebサイトをスマートフォンで見たとき、画像などがかなり小さく表示され事がある。
-    それは「viewport」が設定されていないためにある。
-]
--->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 
-        name="viewport" [viewportを使用するとブラウザ側が判るようにしている。]
-
-        width=device-width [
-            画面の表示幅を使用しているデバイスのサイズに合わせるという表記。
-            これによってサイズに合わせた表示サイズを自動的に調整できる。
-        ]
-        
-        initial-scale=1 [
-            デバイスの初期表示のサイズを指定できる。1を指定した場合はそのデバイスにあったサイズで表示される.
-
-        ]
-    -->
     <title>Study HTML/CSS</title>
     <link rel="stylesheet" href="style/stylesheet.css">
 </head>
 
 <body>
     <div id="header">
-        <!--  ↓src：画像のURL   ↓alt：画像の説明文  -->
         <h1><a href="index.html"><img id="corridor" src="img/corridor.jpg" alt="大学の廊下" /></a></h1>
     </div>
     <div id="wrapper">
