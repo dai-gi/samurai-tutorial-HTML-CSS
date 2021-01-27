@@ -17,6 +17,7 @@ body {
   border: 0px;
   background-color: #FFF;
   position: relative;
+  background-color:rgb(0, 82, 204);
 }
 
 /* -------------------- header -------------------- */
@@ -72,16 +73,25 @@ body {
 
 /* -------------------- container -------------------- */
 #container {
+  display: grid;
+  
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 12px;
+
+  /* align-items: center; */
+
   margin: 0 10vw;
   clear: both;
-  display: grid;
-  grid-template-rows: 40vw 25vw;
-  grid-template-columns: 55vw 23vw;
+
+  background-color:#C00;
 }
 
 /* -------------------- main -------------------- */
 #main {
   margin: 2.62467vw 3.14961vw;
+  background-color:rgb(0, 204, 0);
+  grid-column-start: 1;
+  grid-column-end: 11;
 }
 #main .post {
   margin: 0 0 2vw;
@@ -124,12 +134,10 @@ body {
 
 /* -------------------- side -------------------- */
 #side {
+  background-color:rgb(0, 82, 204);
   height: 37vw;
   margin: 1vw;
   background-color: #F99;
-  grid-column: 2 / 3;
-  display: grid;
-  grid-template-rows: 19vw 20vw;
 }
 #side .box {
   margin: 1vw;
@@ -173,10 +181,3 @@ body {
 }
 
 /* -------------------- media query -------------------- */
-@media screen and (max-width: 1520px)  and (min-width: 1920px) {
-  
-}
-@media screen and (max-width: 960px) {
-
-}
-
