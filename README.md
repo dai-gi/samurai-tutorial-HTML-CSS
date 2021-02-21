@@ -1,1 +1,1 @@
-# study_html
+# samurai-tutorial-HTMLandCSS
