@@ -1,1 +1,1 @@
-# samurai-tutorial-HTMLandCSS
+# samurai-tutorial-HTML-CSS
